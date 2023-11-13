@@ -53,6 +53,7 @@ export const Filters = ({ filters, setFilters }: IFiltersProps) => {
       <span className="select__desc">Filters:</span>
       {filtersList.map((filter) => (
         <Select
+          key={filter.type}
           options={filter.options}
           onChange={handleChange}
           type={filter.type}
