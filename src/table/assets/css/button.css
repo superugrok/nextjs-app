@@ -1,0 +1,21 @@
+.btn {
+  background-color: #17a0b8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin-right: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #197c8d;
+}
+
+.btn:disabled {
+  background-color: #144750;
+  pointer-events: none;
+}

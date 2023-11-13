@@ -1,0 +1,70 @@
+.table-wrapper::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  width: 2px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #f0f2f5;
+  display: none;
+}
+
+.table-wrapper:hover::-webkit-scrollbar-thumb {
+  background: #00d8ff;
+  display: block;
+}
+
+.table-wrapper {
+  overflow-y: auto;
+  height: 65vh;
+  margin-bottom: 15px;
+}
+.table-wrapper thead th {
+  position: sticky;
+  top: 0px;
+}
+
+.table {
+  width: 100%;
+  border: none;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.table thead th {
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  padding: 10px 15px;
+  background: #d8d8d8;
+  font-size: 14px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.table tbody td {
+  text-align: center;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.table thead tr th:first-child,
+.table tbody tr td:first-child {
+  border-left: none;
+}
+.table thead tr th:last-child,
+.table tbody tr td:last-child {
+  border-right: none;
+}
+.table tbody tr:nth-child(even) {
+  background: #f3f3f3;
+}
+.table tbody tr {
+  transition: 0.3s ease filter;
+}
+.table tbody tr:hover {
+  filter: drop-shadow(2px 4px 6px gray);
+}
