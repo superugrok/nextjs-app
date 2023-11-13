@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <div className="home">
       <Image
+        priority={true}
         className="home__image"
         width={200}
         height={200}
