@@ -2,8 +2,12 @@ import React from "react";
 import { Select } from "./common/Select";
 import { IFiltersProps } from "@TableTypes/props";
 import "@TableAssets/css/select.css";
+import { useRouter } from "next/router";
+import { formDynamicRouteQuery } from "@Utils/dynamicRouteQuery";
 
-export const Filters = ({ filters, setFilters }: IFiltersProps) => {
+export const Filters = ({ filters, page }: IFiltersProps) => {
+  const route = useRouter();
+
   const filterOptions = {
     gender: ["male", "female"],
     nat: [
@@ -46,7 +50,12 @@ export const Filters = ({ filters, setFilters }: IFiltersProps) => {
   ];
 
   const handleChange = (changeEvent: any, type: string) =>
-    setFilters({ ...filters, [type]: changeEvent.target.value });
+    route.push(
+      formDynamicRouteQuery("table", page, {
+        ...filters,
+        [type]: changeEvent.target.value,
+      })
+    );
 
   return (
     <div className="select">

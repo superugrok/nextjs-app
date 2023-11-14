@@ -1,16 +1,19 @@
 import { App } from "@Table/app/App";
 import { tableConfig } from "@Configs/tableConfig";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { Fetch } from "@Utils/fetch";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const req = { ...context.query };
+  delete req.page;
+  const { page }: any = context.params;
   const url = "https://randomuser.me/api/";
   const params = {
     headers: {
       results: tableConfig.rowsToDisplay,
-      page: tableConfig.page,
       seed: tableConfig.seed,
-      ...tableConfig.filters,
+      page,
+      ...req,
     },
   };
   const result = await Fetch(url, params);
@@ -18,14 +21,12 @@ export const getStaticProps: GetStaticProps = async () => {
   if (!result) return { notFound: true };
 
   return {
-    props: { result: result.results },
+    props: { result: result.results, page: Number(page), req },
   };
 };
 
-const TableIndex = ({ result }) => {
-  return (
-    <App page={tableConfig.page} filters={tableConfig.filters} users={result} />
-  );
+const TableIndex = ({ result, page, req }) => {
+  return <App filters={req} users={result} page={page} />;
 };
 
 export default TableIndex;

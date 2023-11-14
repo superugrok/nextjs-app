@@ -1,5 +1,5 @@
 export interface IFiltersState {
-  gender: "male" | "female";
+  gender: "male" | "female" | string;
   nat: string;
 }
 

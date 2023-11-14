@@ -1,21 +1,16 @@
-import { IFiltersState, TUsersState } from "./states";
+import { IFiltersState, IUsersObject, TUsersState } from "./states";
 
-interface ICommonProps {
-  users: TUsersState;
+export interface ICommonProps {
+  users?: IUsersObject[];
   page: number;
-}
-
-export interface ITableProps extends ICommonProps {
   filters: IFiltersState;
-  setFilters: React.Dispatch<React.SetStateAction<IFiltersState>>;
 }
 
 export interface IPaginationProps extends ICommonProps {
-  setPage: React.Dispatch<React.SetStateAction<number>>;
   pagesCount: number;
 }
 
 export interface IFiltersProps {
+  page: number;
   filters: IFiltersState;
-  setFilters: React.Dispatch<React.SetStateAction<IFiltersState>>;
 }

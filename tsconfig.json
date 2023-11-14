@@ -24,6 +24,8 @@
       "@Peoples/*": ["./src/peoples/*"],
       "@Components/*": ["./src/components/*"],
       "@Assets/*": ["./src/assets/*"],
+      "@Configs/*": ["./configs/*"],
+      "@Utils/*": ["./utils/*"],
       // Table alliases
       "@TableTypes/*": ["./src/table/types/*"],
       "@TableComponents/*": ["./src/table/components/*"],

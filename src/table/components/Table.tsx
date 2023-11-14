@@ -1,19 +1,18 @@
-import { ITableProps } from "@TableTypes/props";
+import { ICommonProps } from "@TableTypes/props";
 import React from "react";
-import { Loading } from "./Loading";
 import "@TableAssets/css/table.css";
 import { Modal } from "./common/Modal";
 import "@TableAssets/css/modal.css";
 import { Filters } from "./Filters";
 import { buildModalContent } from "@TableUtils/buildModal";
 
-export const Table = ({ users, page, filters, setFilters }: ITableProps) => {
+export const Table = ({ users, filters, page }: ICommonProps) => {
   const [modal, setModal] = React.useState({
     visible: false,
     modalContnet: <div></div>,
   });
 
-  const rows = users[page]?.map((user) => {
+  const rows = users?.map((user) => {
     const fullName = `${user.name.title} ${user.name.first} ${user.name.last}`;
     return (
       <tr
@@ -47,7 +46,7 @@ export const Table = ({ users, page, filters, setFilters }: ITableProps) => {
         setVisible={setModal}
         visible={modal.visible}
       />
-      <Filters filters={filters} setFilters={setFilters} />
+      <Filters filters={filters} page={page} />
       <div className="table-wrapper">
         <table className="table">
           <thead>
