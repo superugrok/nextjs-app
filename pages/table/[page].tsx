@@ -6,7 +6,7 @@ import { Fetch } from "@Utils/fetch";
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const req = { ...context.query };
   delete req.page;
-  const { page }: any = context.params;
+  const { page } = context.query;
   const url = "https://randomuser.me/api/";
   const params = {
     headers: {
@@ -25,8 +25,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const TableIndex = ({ result, page, req }) => {
+const TablePage = ({ result, page, req }) => {
   return <App filters={req} users={result} page={page} />;
 };
 
-export default TableIndex;
+export default TablePage;

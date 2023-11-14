@@ -1,11 +1,16 @@
-import { IPaginationProps } from "@TableTypes/props";
+import { IPaginationProps } from "@Types/common";
 import React, { ReactNode } from "react";
-import { Button } from "./common/Button";
-import "@TableAssets/css/pagination.css";
+import { Button } from "@Components/Button";
+import "@Assets/styles/pagination.css";
 import { useRouter } from "next/navigation";
 import { formDynamicRouteQuery } from "@Utils/dynamicRouteQuery";
 
-export const Pagination = ({ page, pagesCount, filters }: IPaginationProps) => {
+export const Pagination = ({
+  route,
+  page,
+  pagesCount,
+  headers = undefined,
+}: IPaginationProps) => {
   const router = useRouter();
   const dynamicBtns: ReactNode[] = [];
   const checkBorders = (i: number) => i > 1 && i < pagesCount;
@@ -13,9 +18,7 @@ export const Pagination = ({ page, pagesCount, filters }: IPaginationProps) => {
     checkBorders(i) &&
       dynamicBtns.push(
         <Button
-          onClick={() =>
-            router.push(formDynamicRouteQuery("table", i, filters))
-          }
+          onClick={() => router.push(formDynamicRouteQuery(route, i, headers))}
           key={i}
           disabled={i === page}
         >
@@ -29,7 +32,7 @@ export const Pagination = ({ page, pagesCount, filters }: IPaginationProps) => {
   return (
     <div className="pagination-container">
       <Button
-        onClick={() => router.push(formDynamicRouteQuery("table", 1, filters))}
+        onClick={() => router.push(formDynamicRouteQuery(route, 1, headers))}
         disabled={page === 1}
       >
         1
@@ -43,7 +46,7 @@ export const Pagination = ({ page, pagesCount, filters }: IPaginationProps) => {
       </Button>
       <Button
         onClick={() =>
-          router.push(formDynamicRouteQuery("table", pagesCount, filters))
+          router.push(formDynamicRouteQuery(route, pagesCount, headers))
         }
         disabled={page === pagesCount}
       >

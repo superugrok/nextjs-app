@@ -14,6 +14,7 @@ export interface ISelectProps {
   type: string;
   value: string;
   label?: string;
+  disabled?: boolean;
 }
 
 export interface IModalProps {

@@ -8,6 +8,7 @@ export const Select = ({
   type,
   value,
   label,
+  disabled,
 }: ISelectProps) => {
   const opts = options.map((el) => (
     <option value={el} key={el}>
@@ -17,6 +18,7 @@ export const Select = ({
 
   return (
     <select
+      disabled={disabled}
       className="selector"
       value={value}
       onChange={(event) => onChange(event, type)}

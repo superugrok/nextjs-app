@@ -1,6 +1,5 @@
 import { Layout } from "@Components/Layout";
 import Head from "next/head";
-import "@Assets/styles/layout.scss";
 
 const App = ({ Component, pageProps }) => {
   return (

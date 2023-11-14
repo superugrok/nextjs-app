@@ -40,6 +40,7 @@ export const Filters = ({ filters, page }: IFiltersProps) => {
       label: "Gender",
       options: filterOptions.gender,
       value: filters.gender,
+      disabled: true,
     },
     {
       type: "nat",
@@ -68,6 +69,7 @@ export const Filters = ({ filters, page }: IFiltersProps) => {
           type={filter.type}
           value={filter.value}
           label={filter.label}
+          disabled={filter.disabled}
         />
       ))}
     </div>

@@ -6,10 +6,6 @@ export interface ICommonProps {
   filters: IFiltersState;
 }
 
-export interface IPaginationProps extends ICommonProps {
-  pagesCount: number;
-}
-
 export interface IFiltersProps {
   page: number;
   filters: IFiltersState;

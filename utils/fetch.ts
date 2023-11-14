@@ -5,11 +5,15 @@ interface IFetchParams {
 
 export const Fetch = (api: string, params?: IFetchParams) => {
   const getData = async (url: URL) => {
-    const response = await fetch(url, {
-      ...params?.settings,
-    });
-    const data = await response.json();
-    return data;
+    try {
+      const response = await fetch(url, {
+        ...params?.settings,
+      });
+      const data = await response.json();
+      return data;
+    } catch {
+      return false;
+    }
   };
 
   const url = new URL(api);

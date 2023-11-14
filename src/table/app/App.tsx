@@ -2,7 +2,7 @@ import React from "react";
 import "@TableAssets/css/app.css";
 import { Table } from "@TableComponents/Table";
 import { tableConfig } from "@Configs/tableConfig";
-import { Pagination } from "@TableComponents/Pagination";
+import { Pagination } from "@Components/Pagination";
 import { ICommonProps } from "@Table/types/props";
 
 export const App: React.FC<ICommonProps> = ({ users, page, filters }) => {
@@ -10,9 +10,10 @@ export const App: React.FC<ICommonProps> = ({ users, page, filters }) => {
     <div className="tableapp">
       <Table page={page} users={users} filters={filters} />
       <Pagination
+        route="table"
         page={page}
         pagesCount={tableConfig.pagesToDisplay}
-        filters={filters}
+        headers={filters}
       />
     </div>
   );

@@ -9,5 +9,5 @@ export const formDynamicRouteQuery = (
     Object.entries(extraParams).map((param, i) =>
       !i ? `?${param[0]}=${param[1]}` : `&${param[0]}=${param[1]}`
     );
-  return `/${route}/${dynamicRoute}${params?.join("")}`;
+  return `/${route}/${dynamicRoute}${params?.join("") || ""}`;
 };
