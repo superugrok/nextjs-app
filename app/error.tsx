@@ -1,14 +1,10 @@
 "use client";
 
 import { Button } from "@Components/Button";
+import { IErrorProps } from "@Types/common";
 import { useEffect } from "react";
 
-interface IErrorProps {
-  error: Error & { digest?: string };
-  reset: () => void;
-}
-
-const Error = ({ error, reset }: IErrorProps) => {
+const Error: React.FC<IErrorProps> = ({ error, reset }) => {
   useEffect(() => {
     console.error(error);
   }, [error]);

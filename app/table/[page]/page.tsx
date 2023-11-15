@@ -24,9 +24,7 @@ const getUsers = async (props) => {
 const TablePage = async ({ searchParams, params }) => {
   const result = await getUsers({ searchParams, params });
 
-  return (
-    <App filters={searchParams} users={result} page={Number(params.page)} />
-  );
+  return <App filters={searchParams} users={result} />;
 };
 
 export default TablePage;

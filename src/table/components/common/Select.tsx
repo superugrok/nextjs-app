@@ -2,14 +2,14 @@ import { ISelectProps } from "@TableTypes/common";
 import React from "react";
 import "@TableAssets/css/select.css";
 
-export const Select = ({
+export const Select: React.FC<ISelectProps> = ({
   onChange,
   options,
   type,
   value,
   label,
   disabled,
-}: ISelectProps) => {
+}) => {
   const opts = options.map((el) => (
     <option value={el} key={el}>
       {el}

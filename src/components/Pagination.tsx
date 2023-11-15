@@ -7,12 +7,13 @@ import "@Assets/styles/pagination.css";
 import { useRouter } from "next/navigation";
 import { formDynamicRouteQuery } from "@Utils/dynamicRouteQuery";
 
-export const Pagination = ({
+export const Pagination: React.FC<IPaginationProps> = ({
   route,
   page,
   pagesCount,
   headers = undefined,
-}: IPaginationProps) => {
+  setLoading,
+}) => {
   const router = useRouter();
   const dynamicBtns: ReactNode[] = [];
   const checkBorders = (i: number) => i > 1 && i < pagesCount;
@@ -20,7 +21,10 @@ export const Pagination = ({
     checkBorders(i) &&
       dynamicBtns.push(
         <Button
-          onClick={() => router.push(formDynamicRouteQuery(route, i, headers))}
+          onClick={() => {
+            setLoading(true);
+            router.push(formDynamicRouteQuery(route, i, headers));
+          }}
           key={i}
           disabled={i === page}
         >
@@ -34,7 +38,10 @@ export const Pagination = ({
   return (
     <div className="pagination-container">
       <Button
-        onClick={() => router.push(formDynamicRouteQuery(route, 1, headers))}
+        onClick={() => {
+          setLoading(true);
+          router.push(formDynamicRouteQuery(route, 1, headers));
+        }}
         disabled={page === 1}
       >
         1
@@ -47,9 +54,10 @@ export const Pagination = ({
         ...
       </Button>
       <Button
-        onClick={() =>
-          router.push(formDynamicRouteQuery(route, pagesCount, headers))
-        }
+        onClick={() => {
+          setLoading(true);
+          router.push(formDynamicRouteQuery(route, pagesCount, headers));
+        }}
         disabled={page === pagesCount}
       >
         {pagesCount}

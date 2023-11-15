@@ -1,17 +1,14 @@
 import { Header } from "@Components/layout/Header";
 import { Footer } from "@Components/layout/Footer";
 import "@Assets/styles/layout.scss";
+import { IRootProps } from "@Types/common";
 
 export const metadata = {
   title: "NextJS App",
   description: "Pet project by superugrok",
 };
 
-interface IRootProps {
-  children: React.ReactNode;
-}
-
-const RootLayout = ({ children }: IRootProps) => {
+const RootLayout: React.FC<IRootProps> = ({ children }) => {
   return (
     <html lang="en">
       <body>

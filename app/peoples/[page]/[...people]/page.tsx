@@ -1,4 +1,4 @@
-import { People } from "@Peoples/components/People";
+import { App } from "@Peoples/App";
 import Axios from "axios";
 
 const getPeoples = async ({ people }) => {
@@ -10,12 +10,12 @@ const getPeoples = async ({ people }) => {
   return data.data;
 };
 
-const PeoplesIndex = async ({ params }) => {
+const PeoplePage = async ({ params }) => {
   const data = await getPeoples(params);
 
   return (
-    <People page={Number(params.page)} data={data} people={params.people[0]} />
+    <App page={Number(params.page)} appData={data} people={params.people[0]} />
   );
 };
 
-export default PeoplesIndex;
+export default PeoplePage;

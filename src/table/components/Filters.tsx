@@ -5,7 +5,11 @@ import "@TableAssets/css/select.css";
 import { useRouter } from "next/navigation";
 import { formDynamicRouteQuery } from "@Utils/dynamicRouteQuery";
 
-export const Filters = ({ filters, page }: IFiltersProps) => {
+export const Filters: React.FC<IFiltersProps> = ({
+  filters,
+  page,
+  setLoading,
+}) => {
   const route = useRouter();
 
   const filterOptions = {
@@ -50,13 +54,15 @@ export const Filters = ({ filters, page }: IFiltersProps) => {
     },
   ];
 
-  const handleChange = (changeEvent: any, type: string) =>
+  const handleChange = (changeEvent: any, type: string) => {
+    setLoading(true);
     route.push(
       formDynamicRouteQuery("table", page, {
         ...filters,
         [type]: changeEvent.target.value,
       })
     );
+  };
 
   return (
     <div className="select">

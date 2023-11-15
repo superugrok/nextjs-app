@@ -22,9 +22,7 @@ const getUsers = async () => {
 const TableIndex = async () => {
   const result = await getUsers();
 
-  return (
-    <App page={tableConfig.page} filters={tableConfig.filters} users={result} />
-  );
+  return <App filters={tableConfig.filters} users={result} />;
 };
 
 export default TableIndex;

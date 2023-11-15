@@ -1,7 +1,11 @@
 import React from "react";
 import { IModalProps } from "@TableTypes/common";
 
-export const Modal = ({ visible, setVisible, content }: IModalProps) => {
+export const Modal: React.FC<IModalProps> = ({
+  visible,
+  setVisible,
+  content,
+}) => {
   React.useEffect(() => {
     const listener = (event: any) => {
       event.target.className == "modal" &&

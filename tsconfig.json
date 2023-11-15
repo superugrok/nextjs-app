@@ -32,7 +32,9 @@
       "@TableTypes/*": ["./src/table/types/*"],
       "@TableComponents/*": ["./src/table/components/*"],
       "@TableAssets/*": ["./src/table/assets/*"],
-      "@TableUtils/*": ["./src/table/utils/*"]
+      "@TableUtils/*": ["./src/table/utils/*"],
+      // Peoples alliases
+      "@PeoplesTypes/*": ["./src/peoples/types/*"]
     },
     "strictNullChecks": true
   },

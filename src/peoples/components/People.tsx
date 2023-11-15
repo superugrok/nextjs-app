@@ -1,9 +1,15 @@
 "use client";
 
+import { IPeopleProps } from "@PeoplesTypes/common";
 import { getBackboneComponent } from "./BackboneElement";
 import Link from "next/link";
 
-export const People = ({ people, data, page }) => {
+export const People: React.FC<IPeopleProps> = ({
+  people,
+  data,
+  page,
+  setLoading,
+}) => {
   return (
     <div className="peoples">
       <span className="peoples__hover">Skywars people number {people}</span>
@@ -13,7 +19,11 @@ export const People = ({ people, data, page }) => {
         So, ${data.eye_color} eyes are awesome too!`
         )}
       </span>
-      <Link className="peoples__link" href={`/peoples/${page}`}>
+      <Link
+        onClick={() => setLoading(true)}
+        className="peoples__link"
+        href={`/peoples/${page}`}
+      >
         Back
       </Link>
     </div>

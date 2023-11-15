@@ -1,6 +1,6 @@
 "use client";
 
-import { ICommonProps } from "@TableTypes/props";
+import { ITableProps } from "@TableTypes/props";
 import React from "react";
 import "@TableAssets/css/table.css";
 import { Modal } from "./common/Modal";
@@ -9,7 +9,12 @@ import { Filters } from "./Filters";
 import { buildModalContent } from "@TableUtils/buildModal";
 import Image from "next/image";
 
-export const Table = ({ users, filters, page }: ICommonProps) => {
+export const Table: React.FC<ITableProps> = ({
+  users,
+  filters,
+  page,
+  setLoading,
+}) => {
   const [modal, setModal] = React.useState({
     visible: false,
     modalContnet: <div></div>,
@@ -56,7 +61,7 @@ export const Table = ({ users, filters, page }: ICommonProps) => {
         setVisible={setModal}
         visible={modal.visible}
       />
-      <Filters filters={filters} page={page} />
+      <Filters setLoading={setLoading} filters={filters} page={page} />
       <div className="table-wrapper">
         <table className="table">
           <thead>
