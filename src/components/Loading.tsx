@@ -1,5 +1,6 @@
 import React from "react";
-import "@TableAssets/css/loading.css";
+import "@Assets/styles/loading.css";
+import { Layout } from "./Layout";
 
 export const Loading = () => {
   return (

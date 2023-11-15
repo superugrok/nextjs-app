@@ -1,6 +1,6 @@
 import { IButtonProps } from "@TableTypes/common";
 import React from "react";
-import "@TableAssets/css/button.css";
+import "@Assets/styles/button.css";
 
 export const Button = ({
   className,

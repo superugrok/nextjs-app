@@ -1,0 +1,80 @@
+.peoples {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  width: 45%;
+  margin: 0 auto;
+  padding: 15px;
+  align-items: center;
+  background: white;
+
+  &__hover {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__details {
+    font-size: 1.2rem;
+    color: red;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &:hover {
+      color: cadetblue;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 10px;
+
+    li {
+      margin: 10px 0;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 40%;
+        background: #efdd89;
+        position: absolute;
+        top: 30%;
+        left: -12px;
+      }
+    }
+
+    a {
+      width: 100%;
+      color: #808285;
+      text-decoration: none;
+      border-left: 6px solid #abc7ea;
+      display: block;
+      padding-left: 25px;
+      height: 44px;
+      line-height: 44px;
+      font-size: 20px;
+      position: relative;
+      transition: 0.3s linear;
+
+      &:hover {
+        background: #d4d8d9;
+      }
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 70%;
+        background: #ee997c;
+        position: absolute;
+        top: 15%;
+        left: -12px;
+      }
+    }
+  }
+}
