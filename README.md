@@ -1,6 +1,6 @@
 # NextJS 12 Project 🚀
 
-Welcome to my exciting Next.js project! 🌈 This marks the beginning of my journey into the world of Next.js. This project brings together two React projects, namely PeoplesTable and PeoplesList, both revamped for Server Side Rendering (SSR) and united under a single, powerful project.
+Welcome to my Next.js project! This marks the beginning of my journey into the world of Next.js. This project brings together two React projects, namely PeoplesTable and PeoplesList, both revamped for Server Side Rendering (SSR) and united under a single, powerful project.
 
 ### Key Highlights
 
