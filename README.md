@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS 13+ Project 🚀
 
-## Getting Started
+Welcome to my Next.js project! This marks the beginning of my journey into the world of Next.js. This project brings together two React projects, namely PeoplesTable and PeoplesList, both revamped for Server Side Rendering (SSR) and united under a single, powerful project.
 
-First, run the development server:
+### Key Highlights
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Dual Version Compatibility:**
+  - The project boasts compatibility with both Next.js 12 (check out the dedicated branch) and the latest Next.js 13+ (main branch). It's a journey through the evolution of Next.js!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **PeoplesTable and PeoplesList Integration:**
+  - Witness the fusion of two standalone React projects, PeoplesTable and PeoplesList, now harmonized and supercharged with the capabilities of Next.js.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Server Side Rendering:**
+  - Dive into the world of Server Side Rendering, where React components come to life on the server, delivering enhanced performance and SEO benefits.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Getting Started 🚀
 
-## Learn More
+To get this up and running locally, follow these simple steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Run the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    - `npm run dev`
+    - `yarn dev`
+    - `pnpm dev`
+    - `bun dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Running Tests 🧪
 
-## Deploy on Vercel
+1. Run end-to-end tests:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    - `npm run test:e2e`
+    - `yarn test:e2e`
+    - `pnpm test:e2e`
+    - `bun test:e2e`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Building the Project 🏗️
+
+Build the project with:
+
+- `npm run build`
+
+### Deployment 🌐
+
+Check out the live deployment at [NextJS App](https://nextjs-app-chi-henna.vercel.app/). Explore the project in action!
