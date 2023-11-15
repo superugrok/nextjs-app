@@ -1,3 +1,5 @@
+"use client";
+
 import { ICommonProps } from "@TableTypes/props";
 import React from "react";
 import "@TableAssets/css/table.css";

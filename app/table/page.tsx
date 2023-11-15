@@ -1,9 +1,8 @@
 import { App } from "@Table/app/App";
 import { tableConfig } from "@Configs/tableConfig";
-import { GetStaticProps } from "next";
 import { Fetch } from "@Utils/fetch";
 
-export const getStaticProps: GetStaticProps = async () => {
+const getUsers = async () => {
   const url = "https://randomuser.me/api/";
   const params = {
     headers: {
@@ -15,14 +14,14 @@ export const getStaticProps: GetStaticProps = async () => {
   };
   const result = await Fetch(url, params);
 
-  if (!result) return { notFound: true };
+  if (!result) return false;
 
-  return {
-    props: { result: result.results },
-  };
+  return result.results;
 };
 
-const TableIndex = ({ result }) => {
+const TableIndex = async () => {
+  const result = await getUsers();
+
   return (
     <App page={tableConfig.page} filters={tableConfig.filters} users={result} />
   );

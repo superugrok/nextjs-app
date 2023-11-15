@@ -2,7 +2,7 @@ import React from "react";
 import { Select } from "./common/Select";
 import { IFiltersProps } from "@TableTypes/props";
 import "@TableAssets/css/select.css";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { formDynamicRouteQuery } from "@Utils/dynamicRouteQuery";
 
 export const Filters = ({ filters, page }: IFiltersProps) => {

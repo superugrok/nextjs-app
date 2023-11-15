@@ -1,3 +1,5 @@
+"use client";
+
 import { IPaginationProps } from "@Types/common";
 import React, { ReactNode } from "react";
 import { Button } from "@Components/Button";
