@@ -2,7 +2,7 @@ import { App } from "@Peoples/App";
 import Axios from "axios";
 
 const getPeoples = async ({ people }) => {
-  const api = `https://swapi.dev/api/people/${people && people[0]}`;
+  const api = `https://swapi.dev/api/people/${people[0]}`;
   const data = await Axios(api);
 
   if (!data) return false;
