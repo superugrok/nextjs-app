@@ -17,6 +17,11 @@ export const Navigation = () => {
       text: "Peoples",
       path: "/peoples",
     },
+    {
+      id: 4,
+      text: "Animals",
+      path: "/animals",
+    },
   ];
 
   return (

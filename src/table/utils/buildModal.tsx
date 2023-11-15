@@ -1,5 +1,6 @@
 import React from "react";
 import { IUsersObject } from "@TableTypes/states";
+import Image from "next/image";
 
 type TSetModal = (
   value: React.SetStateAction<{
@@ -19,7 +20,15 @@ export const buildModalContent = (
         className="modal__btn"
         onClick={() => setModal({ visible: false, modalContnet: <div></div> })}
       ></button>
-      <img src={user.picture.large} alt={fullName} className="modal__image" />
+      <Image
+        width={130}
+        height={130}
+        src={user.picture.large}
+        alt={fullName}
+        className="modal__image"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8cv1GPQAHzgL0BHbHnQAAAABJRU5ErkJggg=="
+      />
       <p className="modal__fullname">{fullName}</p>
       <div className="modal__wrapper">
         <div className="modal__content">
