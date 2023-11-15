@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const PeoplesId = ({ data, page, people }) => {
+const PeoplesIds = ({ data, page, people }) => {
   return (
     <div className="peoples">
       <span className="peoples__hover">Skywars people number {people}</span>
@@ -33,4 +33,4 @@ const PeoplesId = ({ data, page, people }) => {
   );
 };
 
-export default PeoplesId;
+export default PeoplesIds;
