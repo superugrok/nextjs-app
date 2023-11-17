@@ -13,7 +13,7 @@ Welcome to my Next.js project! This marks the beginning of my journey into the w
 - **Server Side Rendering:**
   - Dive into the world of Server Side Rendering, where React components come to life on the server, delivering enhanced performance and SEO benefits.
 
-## Getting Started 🚀
+## Getting Started ⚙️
 
 To get this up and running locally, follow these simple steps:
 
