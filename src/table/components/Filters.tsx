@@ -2,15 +2,17 @@ import React from "react";
 import { Select } from "./common/Select";
 import { IFiltersProps } from "@TableTypes/props";
 import "@TableAssets/css/select.css";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { formDynamicRouteQuery } from "@Utils/dynamicRouteQuery";
+import { InnerLoading } from "@Components/InnerLoading";
 
-export const Filters: React.FC<IFiltersProps> = ({
-  filters,
-  page,
-  setLoading,
-}) => {
+export const Filters: React.FC<IFiltersProps> = ({ filters }) => {
+  const [loading, setLoading] = React.useState(false);
   const route = useRouter();
+  const page = Number(usePathname().replaceAll(/[^\d]/g, "")) || 1;
+  const searchParams = useSearchParams().toString();
+
+  React.useEffect(() => setLoading(false), [searchParams]);
 
   const filterOptions = {
     gender: ["male", "female"],
@@ -66,6 +68,7 @@ export const Filters: React.FC<IFiltersProps> = ({
 
   return (
     <div className="select">
+      <InnerLoading display={loading} />
       <span className="select__desc">Filters:</span>
       {filtersList.map((filter) => (
         <Select

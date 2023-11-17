@@ -1,9 +1,7 @@
 export interface IPaginationProps {
   route: string;
-  page: number;
   pagesCount: number;
   headers?: { [key: string]: any } | undefined;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IRootProps {

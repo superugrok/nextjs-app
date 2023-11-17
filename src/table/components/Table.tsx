@@ -3,18 +3,12 @@
 import { ITableProps } from "@TableTypes/props";
 import React from "react";
 import "@TableAssets/css/table.css";
-import { Modal } from "./common/Modal";
-import "@TableAssets/css/modal.css";
+import { Modal } from "@Components/Modal";
 import { Filters } from "./Filters";
 import { buildModalContent } from "@TableUtils/buildModal";
 import Image from "next/image";
 
-export const Table: React.FC<ITableProps> = ({
-  users,
-  filters,
-  page,
-  setLoading,
-}) => {
+export const Table: React.FC<ITableProps> = ({ users, filters }) => {
   const [modal, setModal] = React.useState({
     visible: false,
     modalContnet: <div></div>,
@@ -61,7 +55,7 @@ export const Table: React.FC<ITableProps> = ({
         setVisible={setModal}
         visible={modal.visible}
       />
-      <Filters setLoading={setLoading} filters={filters} page={page} />
+      <Filters filters={filters} />
       <div className="table-wrapper">
         <table className="table">
           <thead>

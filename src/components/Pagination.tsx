@@ -4,16 +4,17 @@ import { IPaginationProps } from "@Types/common";
 import React, { ReactNode } from "react";
 import { Button } from "@Components/Button";
 import "@Assets/styles/pagination.css";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { formDynamicRouteQuery } from "@Utils/dynamicRouteQuery";
+import { InnerLoading } from "./InnerLoading";
 
 export const Pagination: React.FC<IPaginationProps> = ({
   route,
-  page,
   pagesCount,
   headers = undefined,
-  setLoading,
 }) => {
+  const page = Number(usePathname().replaceAll(/[^\d]/g, "")) || 1;
+  const [loading, setLoading] = React.useState(false);
   const router = useRouter();
   const dynamicBtns: ReactNode[] = [];
   const checkBorders = (i: number) => i > 1 && i < pagesCount;
@@ -37,6 +38,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
 
   return (
     <div className="pagination-container">
+      <InnerLoading display={loading} />
       <Button
         onClick={() => {
           setLoading(true);

@@ -11,7 +11,7 @@ export const metadata = {
 const RootLayout: React.FC<IRootProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body>
+      <body id="root">
         <Header />
         <div className="inner">{children}</div>
         <Footer />
